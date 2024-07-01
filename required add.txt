@@ -1,0 +1,32 @@
+composer require laravel/ui --dev
+php artisan ui bootstrap --auth
+npm install jquery
+
+composer require mews/captcha
+php artisan vendor:publish --provider="Mews\Captcha\CaptchaServiceProvider"
+
+composer remove mews/captcha
+php artisan vendor:unpublish --provider="Mews\Captcha\CaptchaServiceProvider"
+
+composer require yajra/laravel-datatables-oracle
+composer require select2/select2
+npm install jquery-fileinput
+php artisan storage:link
+npm install datepicker
+
+laravel 9 kebawah
+composer require barryvdh/laravel-dompdf
+unpublish dulu
+php artisan vendor:unpublish --tag=laravel-dompdf
+composer remove barryvdh/laravel-dompdf
+
+untuk laravel 10
+composer require niklasravnsborg/laravel-pdf
+https://github.com/niklasravnsborg/laravel-pdf
+
+composer require maatwebsite/excel
+https://docs.laravel-excel.com/3.1/getting-started/installation.html
+
+
+///composer require consoletvs/charts
+
