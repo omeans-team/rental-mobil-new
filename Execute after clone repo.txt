@@ -1,0 +1,22 @@
+Enable the GD extension
+
+Open your php.ini file, which is usually located at C:\xampp\php\php.ini.
+Search for the line ;extension=gd and remove the semicolon at the beginning to uncomment it.
+Save the changes to the php.ini file.
+Restart your Apache server (or the web server you're using) to apply the changes.
+Run composer install again to see if the issue is resolved.
+
+Enable the GD extension
+;extension=gd
+
+Enable the Zip extension
+;extension=zip
+
+.env
+
+composer install
+//composer update
+
+php artisan migrate
+php artisan db:seed
+php artisan serve
