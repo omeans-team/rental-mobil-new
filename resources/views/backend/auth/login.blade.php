@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('contents')
     @php
-        $logo = \App\Models\Setting::where('slug', 'logo-depan')->first();
+        $tableExists = Schema::hasTable('settings');
+        $logo = $tableExists ? \App\Models\Setting::where('slug', 'logo-depan')->first() : null;
     @endphp
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">

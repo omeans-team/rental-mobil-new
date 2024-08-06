@@ -12,8 +12,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
+        @php
+            $tableExists = Schema::hasTable('settings');
+            $namatoko = $tableExists ? App\Models\Setting::where('slug', 'nama-toko')->get()->first()->description : 'Rental Mobil';
+        @endphp
         {{-- {{ config('app.name') }} --}}
-        {{ App\Models\Setting::where('slug', 'nama-toko')->get()->first()->description }} @if (ucfirst(trim(parse_url(Request::url(), PHP_URL_PATH), '/')) == '')
+        {{ $namatoko }} @if (ucfirst(trim(parse_url(Request::url(), PHP_URL_PATH), '/')) == '')
             @else{{ '|' }} {{ ucfirst(basename(Request::url())) }}
         @endif
     </title>
